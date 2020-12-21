@@ -12,8 +12,8 @@ def url():
     url = str(url_entry.get())
     YouTube(url).streams.first().download('/Users/weichenho/Desktop/Python/youtube/movie')  #影片下載的路徑
     download = os.listdir('/Users/weichenho/Desktop/Python/youtube/movie')                  #找到下載檔案的名稱
-    movie = download[0][:-4]
-
+    movie = download[1][:-4]
+ 
     video = VideoFileClip(os.path.join("/Users/weichenho/Desktop/Python/youtube/movie", f"{movie}.mp4"))    #要轉檔的位置
     video.audio.write_audiofile(os.path.join("/Users/weichenho/Downloads",f"{movie}.mp3"))          #要存到哪裏的
 
